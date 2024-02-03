@@ -1,1 +1,1 @@
-## Dot Files Linux / Mac 
+## Dot Files Mac 
