@@ -1,0 +1,10 @@
+#gitignore
+
+#brew
+Brewfile.lock.json
+
+#JetBrains
+.DS_Store
+
+#Neovim
+nvim/lazy-lock.jso
