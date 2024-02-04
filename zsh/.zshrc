@@ -11,6 +11,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # Set ZSH Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 # ZSH Plugins
 plugins=(
   git
@@ -32,6 +34,9 @@ source $HOME/.dotfiles/zsh/aliases.zsh
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# zsh-autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
