@@ -17,6 +17,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 plugins=(
   git
   nvm
+  brew
 )
 
 source $ZSH/oh-my-zsh.sh
