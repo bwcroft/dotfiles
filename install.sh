@@ -46,7 +46,7 @@ fi
 # Setup Powerlevel10k
 echo "${GREEN}Init PowerLevel10K Settings${RESET}"
 rm -rf $HOME/.p10k.zsh
-ln -s $DOTFILES/.p10k.zsh $HOME/.p10k.zsh
+ln -s $DOTFILES/zsh/.p10k.zsh $HOME/.p10k.zsh
 
 # Install Homebrew if not already installed.
 if test ! $(which brew); then
