@@ -10,6 +10,11 @@
     ```
     cd ~/.dotfiles && sh install.sh
     ```
+3. Set MesloLGS NF Font in iTerm2
+    1. Open iTerm2.
+    2. Open iTerm2 Settings.
+    3. Navigate to Profiles -> Text
+    4. Change font to MesloLGS NF
     
 ### ZSH
 - ```ZSH``` is configured to use ```iTerm2```, ```Oh-My-Zsh```, and ```Powerlevel10k```. 
