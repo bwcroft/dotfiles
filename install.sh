@@ -65,10 +65,10 @@ if fc-list | grep -q "$FONT_NAME"; then
 else
   git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
   cd nerd-fonts
-  ./install.sh "$font_name"  
+  ./install.sh "$FONT_NAME"  
   cd ..
   rm -rf nerd-fonts
-  echo "${CYAN}MesloLGS NF has been installed.${RESET}"
+  echo "${CYAN}${FONT_NAME} has been installed.${RESET}"
 fi
 
 # Setup zsh
