@@ -3,15 +3,18 @@
 # Enable immediate exit on error
 set -e
 
-#Colors
+# Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 CYAN='\033[0;36m'
 RESET='\033[0m'
 
-#Paths
+# Paths
 DOTFILES=$HOME/.dotfiles
 POWER_LEVEL_10K=$HOME/.oh-my-zsh/custom/themes/powerlevel10k
+
+# Font
+FONT_NAME="MesloLGS NF"
 
 # Log errors and exit
 log_error() {
@@ -54,6 +57,18 @@ if test ! $(which brew); then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 else 
   echo "${CYAN}Homebrew Already Installed${RESET}"
+fi
+
+# Check if the font is already installed
+if fc-list | grep -q "$FONT_NAME"; then
+  echo "${GREEN}${FONT_NAME} Font Already Installed.${RESET}"
+else
+  git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
+  cd nerd-fonts
+  ./install.sh "$font_name"  
+  cd ..
+  rm -rf nerd-fonts
+  echo "${CYAN}MesloLGS NF has been installed.${RESET}"
 fi
 
 # Setup zsh

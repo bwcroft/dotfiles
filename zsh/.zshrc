@@ -8,9 +8,10 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set ZSH Theme
+# Set Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# Set zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # ZSH Plugins
@@ -21,8 +22,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
-POWERLEVEL9K_MODE="nerdfont-complete"
 
 # -------------------
 # User Configurations
