@@ -30,7 +30,7 @@ echo "${GREEN}Setting Up Your Mac...${RESET}"
 # Install Oh-My-Zsh if not already installed
 if [ ! -z "$(which omz)" ]; then
   echo "${GREEN}Installing Oh-My-Zsh...${RESET}"
-  /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else 
   echo "${CYAN}Oh-My-Zsh Already Installed${RESET}" 
 fi
@@ -84,7 +84,11 @@ brew bundle --file Brewfile
 
 # Setup nvim
 echo "${GREEN}Init Neovim Config...${RESET}"
-rm -rf $HOME/.config/nvim
+if [ ! -d "$HOME/.config" ]; then
+  mkdir "$HOME/.config"
+else 
+  rm -rf $HOME/.config/nvim
+fi
 ln -s $DOTFILES/nvim $HOME/.config/nvim
 
 echo "${GREEN}Done!${RESET}"
