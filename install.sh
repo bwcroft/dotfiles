@@ -31,7 +31,7 @@ echo "${GREEN}Setting Up Your Mac...${RESET}"
 # Install Oh-My-Zsh if not already installed
 if [ ! -d "$OH_MY_ZSH" ]; then
   echo "${GREEN}Installing Oh-My-Zsh...${RESET}"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 else 
   echo "${CYAN}Oh-My-Zsh Already Installed${RESET}" 
 fi
