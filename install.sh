@@ -12,10 +12,8 @@ RESET='\033[0m'
 # Paths
 DOTFILES=$HOME/.dotfiles
 OH_MY_ZSH=$HOME/.oh-my-zsh
+FONTS=$DOTFILES/fonts
 POWER_LEVEL_10K=$HOME/.oh-my-zsh/custom/themes/powerlevel10k
-
-# Font
-FONT_NAME="MesloLGS NF"
 
 # Log errors and exit
 log_error() {
@@ -40,7 +38,7 @@ fi
 if [ ! -d "$POWER_LEVEL_10K" ]; then
   echo "${GREEN}Installing PowerLevel10K${RESET}"
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$POWER_LEVEL_10K"
-else 
+else
   echo "${CYAN}PowerLevel10K Already installed${RESET}"
 fi
 
@@ -61,16 +59,8 @@ else
 fi
 
 # Check if the font is already installed
-if fc-list | grep -q "$FONT_NAME"; then
-  echo "${GREEN}${FONT_NAME} Font Already Installed.${RESET}"
-else
-  git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
-  cd nerd-fonts
-  ./install.sh "$FONT_NAME"  
-  cd ..
-  rm -rf nerd-fonts
-  echo "${CYAN}${FONT_NAME} has been installed.${RESET}"
-fi
+echo "${GREEN}Installing Fonts...${RESET}"
+rsync -r --ignore-existing $FONTS/* $HOME/Library/Fonts
 
 # Setup zsh
 echo "${GREEN}Init .zshrc config...${RESET}"
