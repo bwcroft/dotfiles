@@ -11,6 +11,7 @@ RESET='\033[0m'
 
 # Paths
 DOTFILES=$HOME/.dotfiles
+OH_MY_ZSH=$HOME/.oh-my-zsh
 POWER_LEVEL_10K=$HOME/.oh-my-zsh/custom/themes/powerlevel10k
 
 # Font
@@ -28,7 +29,7 @@ trap 'log_error "Command failed with exit code $?"' ERR
 echo "${GREEN}Setting Up Your Mac...${RESET}"
 
 # Install Oh-My-Zsh if not already installed
-if [ ! -z "$(which omz)" ]; then
+if [ ! -d "$OH_MY_ZSH" ]; then
   echo "${GREEN}Installing Oh-My-Zsh...${RESET}"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else 
