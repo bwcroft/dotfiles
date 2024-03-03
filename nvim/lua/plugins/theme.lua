@@ -1,35 +1,34 @@
 return {
-	{
-		"catppuccin/nvim",
-		lazy = false,
-		name = "catppuccin",
-		priority = 1000,
-		config = function()
-			require("catppuccin").setup({
-				term_colors = true,
-				styles = {
-					comments = {},
-					conditionals = {},
-					loops = {},
-					functions = {},
-					keywords = {},
-					strings = {},
-					variables = {},
-					numbers = {},
-					booleans = {},
-					properties = {},
-					types = {},
-				},
-				color_overrides = {
-					mocha = {
-						base = "#0F0F0F",
-						mantle = "#0F0F0F",
-						crust = "#0F0F0F",
-					},
-				},
-			})
+  {
+    "marko-cerovac/material.nvim",
+    config = function()
+      require("material").setup({
+        contrast = {
+          terminal = false,
+          sidebars = false,
+          floating_windows = true,
+          cursor_line = false,
+          non_current_windows = false,
+          filetypes = {},
+        },
+        plugins = {
+          "neo-tree",
+          "telescope",
+        },
+        disable = {
+          colored_cursor = false,
+          borders = false,
+          background = false,
+          term_colors = false,
+          eob_lines = true,
+        },
+        lualine_style = "default", -- Lualine style ( can be 'stealth' or 'default' )
+        async_loading = true,  -- Load parts of the theme asyncronously for faster startup (turned on by default)
+        custom_colors = nil,   -- If you want to override the default colors, set this to a function
+      })
 
-			vim.cmd.colorscheme("catppuccin")
-		end,
-	},
+      vim.g.material_style = "darker"
+      vim.cmd.colorscheme("material")
+    end,
+  },
 }
