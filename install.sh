@@ -45,7 +45,7 @@ fi
 # Setup Powerlevel10k
 echo "${GREEN}Init PowerLevel10K Settings${RESET}"
 rm -rf $HOME/.p10k.zsh
-ln -s $DOTFILES/zsh/.p10k.zsh $HOME/.p10k.zsh
+ln -s $DOTFILES/zsh/p10k.zsh $HOME/.p10k.zsh
 
 # Install Homebrew if not already installed.
 if test ! $(which brew); then
@@ -65,7 +65,7 @@ rsync -r --ignore-existing $FONTS/* $HOME/Library/Fonts
 # Setup zsh
 echo "${GREEN}Init .zshrc config...${RESET}"
 rm -rf $HOME/.zshrc
-ln -s $DOTFILES/zsh/.zshrc $HOME/.zshrc
+ln -s $DOTFILES/zsh/zshrc $HOME/.zshrc
 
 # Setup Homebrew
 echo "${GREEN}Update brew and install packages...${RESET}"

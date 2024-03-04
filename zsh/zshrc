@@ -16,6 +16,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # ZSH Plugins
 plugins=(
+  z
   git
   nvm
   brew
