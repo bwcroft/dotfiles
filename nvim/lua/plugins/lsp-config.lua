@@ -17,6 +17,7 @@ return {
 					"cssls",
 					"dotls",
 					"gopls",
+          "graphql",
 					"marksman",
 					"intelephense",
 					"pylsp",
@@ -41,6 +42,7 @@ return {
 			lspconfig.cssls.setup({})
 			lspconfig.dotls.setup({})
 			lspconfig.gopls.setup({})
+			lspconfig.graphql.setup({})
 			lspconfig.marksman.setup({})
 			lspconfig.intelephense.setup({})
 			lspconfig.pylsp.setup({})
