@@ -23,16 +23,9 @@ return {
             },
           },
         },
-        filters = {
-          dotfiles = true, -- show dotfiles
-        },
         view = {
           width = 30, -- set the view width to 30
         },
-        -- Uncomment the following if you want to enable git integration
-        -- git = {
-        --   ignore = false, -- show files ignored by git
-        -- },
       })
 
       -- Key mapping to toggle nvim-tree
