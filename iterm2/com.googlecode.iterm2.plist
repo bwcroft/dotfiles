@@ -183,7 +183,7 @@
 				<real>0.0</real>
 			</dict>
 			<key>Background Image Location</key>
-			<string>/Users/brendencroft/.dotfiles/iterm2/wallpaper.jpg</string>
+			<string>/Users/brendencroft/.dotfiles/iterm2/wallpaper2.jpg</string>
 			<key>Background Image Mode</key>
 			<integer>2</integer>
 			<key>Badge Color</key>
@@ -200,7 +200,7 @@
 				<real>1</real>
 			</dict>
 			<key>Blend</key>
-			<real>0.080000000000000002</real>
+			<real>0.11623867753623192</real>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
