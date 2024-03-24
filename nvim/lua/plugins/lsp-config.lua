@@ -11,6 +11,7 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
+          "eslint",
           "tsserver",
           "jsonls",
           "html",
@@ -43,6 +44,7 @@ return {
           },
         },
       })
+      lspconfig.eslint.setup({})
       lspconfig.jsonls.setup({})
       lspconfig.html.setup({})
       lspconfig.cssls.setup({})

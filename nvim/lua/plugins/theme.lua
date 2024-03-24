@@ -24,7 +24,7 @@ return {
 					mocha = {
 						base = "#0F0F0F",
 						mantle = "#0F0F0F",
-						crust = "#0F0F0F",
+						crust = "#000000",
 					},
 				},
 			})
