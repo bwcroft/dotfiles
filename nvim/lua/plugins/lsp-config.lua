@@ -27,6 +27,7 @@ return {
 					"dockerls",
 					"docker_compose_language_service",
 					"bashls",
+					"sqlls",
 				},
 			})
 		end,
@@ -59,6 +60,7 @@ return {
 			lspconfig.dockerls.setup({})
 			lspconfig.docker_compose_language_service.setup({})
 			lspconfig.bashls.setup({})
+			lspconfig.sqlls.setup({})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
