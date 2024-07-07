@@ -23,9 +23,9 @@ return {
 				},
 				color_overrides = {
 					mocha = {
-						base = "#080808",
-						mantle = "#080808",
-						crust = "#080808",
+						base = "#000000",
+						mantle = "#000000",
+						crust = "#000000",
 					},
 				},
 			})
@@ -33,7 +33,7 @@ return {
 			-- Apply Theme
 			vim.cmd.colorscheme("catppuccin")
 
-			-- Add Border & Padding to LSP Hover
+			-- Add Border & Padding to Lsp Hover
 			local hoverConfig = vim.lsp.with(vim.lsp.handlers.hover, {
 				border = "single",
 				focusable = false,
