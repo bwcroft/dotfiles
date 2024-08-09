@@ -12,6 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
+
 vim.loaded_perl_provider = 0
 vim.loaded_python3_provider = 0
 

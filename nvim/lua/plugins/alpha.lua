@@ -30,6 +30,7 @@ return {
       dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
       dashboard.button("spc ff", "  Find file", ":Telescope find_files <CR>"),
       dashboard.button("spc fg", "  Find text", ":Telescope live_grep <CR>"),
+      dashboard.button("spc e", " Toggle File Tree", ":NvimTreeToggle<CR>"),
       dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
     }
 

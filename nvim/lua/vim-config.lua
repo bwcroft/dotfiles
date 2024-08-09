@@ -8,7 +8,7 @@ vim.g.mapleader = " "
 
 vim.opt.clipboard = "unnamedplus"
 
--- Navigate vim panes better 
+-- Navigate vim panes better
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
 vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
@@ -19,4 +19,6 @@ vim.wo.number = true
 
 -- Spelling
 vim.opt.spelllang = "en_us"
-vim.opt.spell = true
+vim.keymap.set("n", "<leader>sp", function()
+	vim.cmd("set spell!")
+end)
