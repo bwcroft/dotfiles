@@ -45,6 +45,7 @@ return {
 					},
 				},
 			})
+
 			lspconfig.eslint.setup({})
 			lspconfig.jsonls.setup({})
 			lspconfig.html.setup({})
