@@ -39,6 +39,19 @@ return {
 				focusable = false,
 			})
 			vim.lsp.handlers["textDocument/hover"] = hoverConfig
+
+			-- General transparency
+			vim.cmd("highlight Normal guibg=#00000050")
+			vim.cmd("highlight NonText guibg=#00000050")
+			vim.cmd("highlight NormalNC guibg=#00000050")
+
+			-- File tree transparency
+			vim.cmd("highlight NvimTreeNormal guibg=#00000099")
+			vim.cmd("highlight NvimTreeNormalNC guibg=#00000099")
+
+			-- Additional elements
+			vim.cmd("highlight StatusLineNC guibg=#00000050")
+			vim.cmd("highlight VertSplit guibg=#00000050")
 		end,
 	},
 }
