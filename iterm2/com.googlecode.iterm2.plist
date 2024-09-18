@@ -183,11 +183,11 @@
 				<real>0.0</real>
 			</dict>
 			<key>Background Image Location</key>
-			<string>/Users/brenden.croft/.dotfiles/iterm2/CatppuccinMocha-Kurzgesagt-CloudyQuasar1.png</string>
+			<string>/Users/brenden.croft/.dotfiles/iterm2/CatppuccinMocha-Ghost.png</string>
 			<key>Background Image Mode</key>
 			<integer>2</integer>
 			<key>Blend</key>
-			<real>0.057074275362318898</real>
+			<real>0.036876132246376835</real>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
