@@ -37,7 +37,28 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
 
-      lspconfig.lua_ls.setup({})
+      lspconfig.lua_ls.setup({
+        settings = {
+          Lua = {
+            runtime = {
+              version = "LuaJIT",
+              path = vim.split(package.path, ";"),
+            },
+            diagnostics = {
+              globals = { "vim" },
+            },
+            workspace = {
+              library = vim.api.nvim_get_runtime_file("", true),
+              maxPreload = 10000,
+              preloadFileSize = 1000,
+            },
+            telemetry = {
+              enable = false,
+            },
+          },
+        },
+      })
+
       lspconfig.ts_ls.setup({
         init_options = {
           preferences = {
