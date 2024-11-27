@@ -182,8 +182,6 @@
 				<key>Red Component</key>
 				<real>0.0</real>
 			</dict>
-			<key>Background Image Location</key>
-			<string>/Users/brenden.croft/.dotfiles/iterm2/CatppuccinMocha-Ghost.png</string>
 			<key>Background Image Mode</key>
 			<integer>2</integer>
 			<key>Blend</key>
