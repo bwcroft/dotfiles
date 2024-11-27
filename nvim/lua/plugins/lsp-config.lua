@@ -89,29 +89,4 @@ return {
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
     end,
   },
-  {
-    enabled = true,
-    "https://github.com/bwcroft/lsp_lines.nvim",
-    config = function()
-      require("lsp_lines").setup()
-
-      -- Disable virtual_text since it's redundant due to lsp_lines.
-      vim.diagnostic.config({
-        virtual_text = false,
-      })
-    end,
-  },
-  {
-    enabled = false,
-    "lsp_lines_local.nvim",
-    dir = "~/Code/personal/lsp_lines.nvim",
-    config = function()
-      require("lsp_lines").setup()
-
-      -- Disable virtual_text since it's redundant due to lsp_lines.
-      vim.diagnostic.config({
-        virtual_text = false,
-      })
-    end,
-  },
 }
