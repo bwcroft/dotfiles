@@ -15,3 +15,6 @@ alias tnew="tmux new -s"
 alias tls="tmux ls"
 alias tkill="tmux kill-session -t"
 alias tkillall="tmux kill-server"
+
+# Screaming Frog
+alias sf="/Applications/Screaming\ Frog\ SEO\ Spider.app/Contents/MacOS/ScreamingFrogSEOSpiderLauncher"
