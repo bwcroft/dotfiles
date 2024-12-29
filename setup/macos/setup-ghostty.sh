@@ -12,4 +12,4 @@ trap 'log_error "Command failed with exit code $?"' ERR
 
 # Run setup scripts
 setup_ghostty
-echo "${GREEN}Done!${RESET}"
+echo -e "${GREEN}Done!${RESET}"

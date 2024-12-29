@@ -1,10 +1,9 @@
 #!/bin/bash
 
 setup_ghostty() {
-  echo "${GREEN}Setup Ghostty...${RESET}"
-  local configPath="$HOME/.config/ghostty"
-  mkdir -p "$HOME/.config"
-  mkdir -p "$configPath"
-  rm -rf "$configPath/config"
-  ln -s $configPath/config ../../ghostty/config
+  echo -e "${GREEN}Setting Up Ghostty...${RESET}"
+  local path="$HOME/.config/ghostty"
+  mkdir -p "$path"
+  rm -rf "$path/config"
+  ln -s "$HOME/.dotfiles/ghostty/config" "$path/config" 
 }

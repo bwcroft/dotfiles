@@ -1,8 +1,9 @@
 #!/bin/bash
 
 setup_nvim() {
-  echo "${GREEN}Setup Neovim...${RESET}"
+  echo -e "${GREEN}Setting Up Neovim...${RESET}"
+  local path="$HOME/.config/nvim"
   mkdir -p "$HOME/.config"
-  rm -rf "$HOME/.config/nvim"
-  ln -s ../../nvim $HOME/.config/nvim
+  rm -rf "$path"
+  ln -s "$HOME/.dotfiles/nvim" "$path"
 }

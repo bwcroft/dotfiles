@@ -20,11 +20,11 @@ source "$(dirname "$0")/ghostty.sh"
 trap 'log_error "Command failed with exit code $?"' ERR
 
 # Run setup scripts
-echo "${GREEN}Setting Up Your Mac...${RESET}"
+echo -e "${GREEN}Setting Up Dotfiles${RESET}"
 setup_fonts
 setup_homebrew
 setup_zsh
 setup_nvim
 setup_tmux
 setup_ghostty
-echo "${GREEN}Done!${RESET}"
+echo -e "${GREEN}Done!${RESET}"
