@@ -1,6 +1,9 @@
 #!/bin/bash
 
+source "$(dirname "$0")/../logger.sh"
+
 setup_fonts() {
-  echo -e "${GREEN}Installing Fonts...${RESET}"
+  log_info "Installing Fronts..."
   rsync -r --ignore-existing "$HOME/.dotfiles/fonts/*" "$HOME/Library/Fonts"
+  log_success "Fonts Installed"
 }

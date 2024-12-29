@@ -1,33 +1,37 @@
 #!/bin/bash
 
+source "$(dirname "$0")/../logger.sh"
+
 setup_oh_my_zsh() {
   local plPath="$HOME/.oh-my-zsh/custom/themes/powerlevel10k"
 
-  # Install Oh-My-Zsh if not already installed
   if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    echo -e "${GREEN}Installing Oh-My-Zsh...${RESET}"
+    log_info "Installing Oh-My-Zsh..."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    log_success "Installed Oh-My-Zsh"
   else 
     echo -e "${CYAN}Oh-My-Zsh Already Installed${RESET}" 
   fi
 
-  # Install PowerLevel10K if not already installed
   if [ ! -d "$plPath" ]; then
-    echo -e "${GREEN}Installing PowerLevel10K${RESET}"
+    log_info "Installing PowerLevel10K"
+    echo -e "${GREEN}${RESET}"
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$plPath"
+    log_success "Installed PowerLevel10K"
   else
-    echo -e "${CYAN}PowerLevel10K Already installed${RESET}"
+    log_info "PowerLevel10K Already installed"
   fi
 
-  # Setup Powerlevel10k
-  echo -e "${GREEN}Setup PowerLevel10K${RESET}"
+  log_info "Setting Up PowerLevel10K"
   rm -rf $HOME/.p10k.zsh
   ln -s "$HOME/.dotfiles/zsh/p10k.zsh" "$HOME/.p10k.zsh"
+  log_success "PowerLevel10K Setup Complete"
 }
 
 setup_zsh() {
   setup_oh_my_zsh
-  echo -e "${GREEN}Setup ZSH...${RESET}"
+  log_info "Setting Up ZSH..."
   rm -rf $HOME/.zshrc
   ln -s "$HOME/.dotfiles/zsh/zshrc" "$HOME/.zshrc"
+  log_success "ZSH Setup Complete"
 }

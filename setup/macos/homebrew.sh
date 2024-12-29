@@ -1,19 +1,22 @@
 #!/bin/bash
 
-setup_homebrew() {
-  # Install Homebrew if not already installed.
-  if test ! $(which brew); then
-    echo -e "${GREEN}Installing Homebrew...${RESET}"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+source "$(dirname "$0")/../logger.sh"
 
+install_homebrew() {
+  if test ! $(which brew); then
+    log_info "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     echo -e 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
+    log_success "Homebrew Installed"
   else 
-    echo -e "${CYAN}Homebrew Already Installed${RESET}"
+    log_info "Homebrew Already Installed"
   fi
+}
 
-  # Setup Homebrew
-  echo -e "${GREEN}Update homebrew and install packages...${RESET}"
+setup_homebrew() {
+  install_homebrew
+  log_info "Update homebrew and install packages..."
   brew update
   brew tap homebrew/bundle
   brew bundle --file ../../Brewfile
