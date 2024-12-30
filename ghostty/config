@@ -7,6 +7,10 @@ font-size = 12
 font-family = MesloLGS NF
 adjust-cell-height = 15%
 
+# General
+cursor-style = block
+shell-integration-features = no-cursor,sudo,no-title
+
 # MacOS
 macos-titlebar-style = transparent
 
