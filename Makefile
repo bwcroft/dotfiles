@@ -12,3 +12,9 @@ macos-ghostty: ## Setup ghostty for macos
 
 macos-nvim: ## Setup neovim for macos
 	./setup/macos/nvim-setup.sh
+
+macos-tmux: ## Setup tmux for macos
+	./setup/macos/tmux-setup.sh
+
+macos-zsh: ## Setup zsh for macos
+	./setup/macos/zsh-setup.sh
