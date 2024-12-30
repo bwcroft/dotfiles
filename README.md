@@ -1,31 +1,17 @@
-## Dot Files for Mac OS
-- The .dotfiles package was created to configure the same environment on multiple devices. When changes are applied, push them to the repository so that other devices can automatically take advantage of those changes.
+## Dotfiles
+**This repository contains my personalized dotfiles, serving as a centralized configuration hub for my development environment.
+It includes tailored settings, plugins, and customizations for tools such as Ghostty terminal, tmux, Neovim, Oh My Zsh, and Zsh.
+The primary goal is to maintain minimal dependencies, utilizing straightforward Bash scripts for installation.
+Currently, the repository includes macOS installation scripts, with plans to extend support to Linux in the future**
 
-### Installation
-1. Clone repo into the home directory
+## MacOS Installation
 
-    ```
-    cd ~ && git clone https://github.com/bwcroft/dotfiles.git
-    ```
-3. Navigate to the .dotfiles directory and run the installation file
-   
-    ```
-    cd ~/.dotfiles && sh install.sh
-    ```
-5. Set MesloLGS NF Font in iTerm2
-    1. Open iTerm2.
-    2. Open iTerm2 Settings.
-    3. Navigate to Profiles -> Text
-    4. Change font to MesloLGS NF
-    
-### ZSH
-- ```ZSH``` is configured to use ```iTerm2```, ```Oh-My-Zsh```, and ```Powerlevel10k```. 
-- If you want to change the ```Powerlevel10k``` settings, update the ```.zshrc``` file and then execute the following command in the terminal
+**Download**
+```bash
+git clone https://github.com/bwcroft/.dotfiles.git ~/.dotfiles
+```
 
-    ```
-    p10k configure
-    ```
-
-### Neovim
-- ```Neovim``` is automaticly installed and configured with ```lua```. 
-- ```Vim``` has been remapped to use ```Neovim```, so no need to type ```nvim```.
+**Install**
+```bash
+make macos-all
+```
