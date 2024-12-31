@@ -1,8 +1,8 @@
 -- Tab Settings
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
 
 vim.g.mapleader = " "
 
@@ -20,5 +20,5 @@ vim.wo.number = true
 -- Spelling
 vim.opt.spelllang = "en_us"
 vim.keymap.set("n", "<leader>sp", function()
-	vim.cmd("set spell!")
+  vim.cmd("set spell!")
 end)

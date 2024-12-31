@@ -55,6 +55,13 @@ return {
             telemetry = {
               enable = false,
             },
+            format = {
+              enable = true,
+              defaultConfig = {
+                indent_style = "spaces",
+                indent_size = "2",
+              },
+            },
           },
         },
       })
@@ -87,6 +94,16 @@ return {
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+    end,
+  },
+  {
+    -- "faultless_local.nvim",
+    -- dir = vim.fn.expand("~/Code/personal/faultless.nvim"),
+    "bwcroft/faultless.nvim",
+    config = function()
+      local faultless = require("faultless")
+      faultless.setup()
+      vim.keymap.set("n", "<leader>d", faultless.toggle_diagnostics)
     end,
   },
 }
