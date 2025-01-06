@@ -13,5 +13,5 @@ git clone https://github.com/bwcroft/.dotfiles.git ~/.dotfiles
 
 **Install**
 ```bash
-make macos-all
+cd ~/.dotfiles && make macos-install
 ```
