@@ -1,4 +1,5 @@
-tap "homebrew/cask-versions"
+tap "azul/zulu"
+
 brew "boost"
 brew "ruby"
 brew "cocoapods"
@@ -22,5 +23,6 @@ brew "z"
 brew "tmux"
 brew "tpm"
 brew "zsh-autosuggestions"
+
 cask "ghostty"
 cask "zulu17"
