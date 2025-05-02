@@ -19,6 +19,5 @@ setup_homebrew() {
   install_homebrew
   log_info "Update homebrew and install packages..."
   brew update
-  brew tap homebrew/bundle
   brew bundle --file "$HOME/.dotfiles/Brewfile"
 }
