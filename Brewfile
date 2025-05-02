@@ -1,4 +1,3 @@
-tap "homebrew/bundle"
 tap "homebrew/cask-versions"
 brew "boost"
 brew "ruby"
