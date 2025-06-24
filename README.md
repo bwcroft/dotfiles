@@ -11,7 +11,7 @@ Currently, the repository includes macOS installation scripts, with plans to ext
 git clone https://github.com/bwcroft/.dotfiles.git ~/.dotfiles
 ```
 
-**Install**
+**Mac Installation**
 ```bash
 cd ~/.dotfiles && make macos-install
 ```
