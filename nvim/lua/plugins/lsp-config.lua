@@ -113,9 +113,9 @@ return {
 		end,
 	},
 	{
-		"faultless_local.nvim",
-		dir = vim.fn.expand("~/Code/personal/faultless.nvim"),
-		-- "bwcroft/faultless.nvim",
+		-- "faultless_local.nvim",
+		-- dir = vim.fn.expand("~/Code/personal/faultless.nvim"),
+		"bwcroft/faultless.nvim",
 		config = function()
 			local faultless = require("faultless")
 			faultless.setup()
