@@ -14,6 +14,7 @@ source "$(dirname "$0")/zsh.sh"
 source "$(dirname "$0")/nvim.sh"
 source "$(dirname "$0")/tmux.sh"
 source "$(dirname "$0")/ghostty.sh"
+source "$(dirname "$0")/opencode.sh"
 
 # Trap any command with a non-zero exit status
 trap 'log_error "Command failed with exit code $?"' ERR
@@ -26,4 +27,5 @@ setup_zsh
 setup_nvim
 setup_tmux
 setup_ghostty
+setup_opencode
 log_success "Done!"

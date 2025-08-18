@@ -10,6 +10,9 @@ macos-install: ## Run all macos setup scripts
 macos-ghostty: ## Setup ghostty for macos
 	./setup/macos/ghostty-setup.sh
 
+macos-opencode: ## Setup opencode for macos
+	./setup/macos/opencode-setup.sh
+
 macos-nvim: ## Setup neovim for macos
 	./setup/macos/nvim-setup.sh
 
