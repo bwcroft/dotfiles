@@ -32,7 +32,7 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 
-			lspconfig.lua_ls.setup({
+			vim.lsp.config("lua_ls", {
 				settings = {
 					Lua = {
 						runtime = {
@@ -61,7 +61,7 @@ return {
 				},
 			})
 
-			lspconfig.ts_ls.setup({
+			vim.lsp.config("ts_ls", {
 				init_options = {
 					preferences = {
 						disableSuggestions = true,
@@ -69,21 +69,21 @@ return {
 				},
 			})
 
-			lspconfig.eslint.setup({})
-			lspconfig.jsonls.setup({})
-			lspconfig.html.setup({})
-			lspconfig.cssls.setup({})
-			lspconfig.dotls.setup({})
-			lspconfig.gopls.setup({})
-			lspconfig.graphql.setup({})
-			lspconfig.marksman.setup({})
-			lspconfig.intelephense.setup({})
-			lspconfig.pylsp.setup({})
-			lspconfig.rust_analyzer.setup({})
-			lspconfig.dockerls.setup({})
-			lspconfig.docker_compose_language_service.setup({})
-			lspconfig.bashls.setup({})
-			lspconfig.sqlls.setup({})
+			vim.lsp.config("eslint", {})
+			vim.lsp.config("jsonls", {})
+			vim.lsp.config("html", {})
+			vim.lsp.config("cssls", {})
+			vim.lsp.config("dotls", {})
+			vim.lsp.config("gopls", {})
+			vim.lsp.config("graphql", {})
+			vim.lsp.config("marksman", {})
+			vim.lsp.config("intelephense", {})
+			vim.lsp.config("pylsp", {})
+			vim.lsp.config("rust_analyzer", {})
+			vim.lsp.config("dockerls", {})
+			vim.lsp.config("docker_compose_language_service", {})
+			vim.lsp.config("bashls", {})
+			vim.lsp.config("sqlls", {})
 
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
