@@ -85,6 +85,26 @@ return {
 			vim.lsp.config("bashls", {})
 			vim.lsp.config("sqlls", {})
 
+			vim.lsp.enable({
+				"lua_ls",
+				"ts_ls",
+				"eslint",
+				"jsonls",
+				"html",
+				"cssls",
+				"gopls",
+				"graphql",
+				"marksman",
+				"intelephense",
+				"pylsp",
+				"rust_analyzer",
+				"dockerls",
+				"docker_compose_language_service",
+				"bashls",
+				"sqlls",
+				"dotls",
+			})
+
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 			vim.keymap.set("n", "K", function()
