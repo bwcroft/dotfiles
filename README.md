@@ -15,8 +15,3 @@ git clone https://github.com/bwcroft/.dotfiles.git ~/.dotfiles
 ```bash
 cd ~/.dotfiles && make macos-install
 ```
-
-**OpenCode Setup**
-```
-opencode auth login
-```
