@@ -6,7 +6,7 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"eslint",
-				"ts_ls",
+				"vtsls",
 				"jsonls",
 				"html",
 				"cssls",
@@ -61,14 +61,7 @@ return {
 				},
 			})
 
-			vim.lsp.config("ts_ls", {
-				init_options = {
-					preferences = {
-						disableSuggestions = true,
-					},
-				},
-			})
-
+			vim.lsp.config("vtsls", {})
 			vim.lsp.config("eslint", {})
 			vim.lsp.config("jsonls", {})
 			vim.lsp.config("html", {})
@@ -87,7 +80,7 @@ return {
 
 			vim.lsp.enable({
 				"lua_ls",
-				"ts_ls",
+				"vtsls",
 				"eslint",
 				"jsonls",
 				"html",
