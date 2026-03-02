@@ -30,8 +30,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local lspconfig = require("lspconfig")
-
 			vim.lsp.config("lua_ls", {
 				settings = {
 					Lua = {
