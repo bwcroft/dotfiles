@@ -7,7 +7,7 @@ setup_oh_my_zsh() {
   local starshipPath="$HOME/.config/starship.toml"
   if [ ! -d "$HOME/.$omz" ]; then
     log_install "$omz"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
     log_installed "$omz"
   else 
     log_exists "$omz"
@@ -19,10 +19,27 @@ setup_oh_my_zsh() {
   log_setup_complete "starship"
 }
 
+zsh_config() {
+  local target_file="$HOME/.dotfiles/zsh/zshrc"
+  local source_line="source $target_file"
+  local zshrc_file="$HOME/.zshrc"
+
+  log_setup_start "zsh"
+
+  if grep -Fxq "$source_line" "$zshrc_file"; then
+    log_info "zshrc dotfile source already in main .zshrc file"
+  else
+    echo "" >> "$zshrc_file"
+    echo "# --------------------------------------------------------------------" >> "$zshrc_file"
+    echo "# CUSTOM DOTFILES CONFIGURATION" >> "$zshrc_file"
+    echo "# --------------------------------------------------------------------" >> "$zshrc_file"
+    echo "$source_line" >> "$zshrc_file"
+  fi
+
+  log_setup_complete "zsh"
+}
+
 setup_zsh() {
   setup_oh_my_zsh
-  log_setup_start "zsh"
-  rm -rf $HOME/.zshrc
-  ln -s "$HOME/.dotfiles/zsh/zshrc" "$HOME/.zshrc"
-  log_setup_complete "zsh"
+  zsh_config
 }
