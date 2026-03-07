@@ -24,7 +24,21 @@ return {
 			},
 		},
 		dependencies = {
-			{ "mason-org/mason.nvim", opts = {} },
+			{
+				"mason-org/mason.nvim",
+				opts = {},
+			},
+			{
+				"WhoIsSethDaniel/mason-tool-installer.nvim",
+				dependencies = { "mason-org/mason.nvim" },
+				opts = {
+					ensure_installed = {
+						"prettier",
+						"stylua",
+						"oxlint",
+					},
+				},
+			},
 		},
 	},
 	{
@@ -58,23 +72,6 @@ return {
 					},
 				},
 			})
-
-			vim.lsp.config("vtsls", {})
-			vim.lsp.config("eslint", {})
-			vim.lsp.config("jsonls", {})
-			vim.lsp.config("html", {})
-			vim.lsp.config("cssls", {})
-			vim.lsp.config("dotls", {})
-			vim.lsp.config("gopls", {})
-			vim.lsp.config("graphql", {})
-			vim.lsp.config("marksman", {})
-			vim.lsp.config("intelephense", {})
-			vim.lsp.config("pylsp", {})
-			vim.lsp.config("rust_analyzer", {})
-			vim.lsp.config("dockerls", {})
-			vim.lsp.config("docker_compose_language_service", {})
-			vim.lsp.config("bashls", {})
-			vim.lsp.config("sqlls", {})
 
 			vim.lsp.enable({
 				"lua_ls",
@@ -121,6 +118,25 @@ return {
 			vim.keymap.set("n", "<leader>gf", function()
 				require("conform").format({ lsp_fallback = true })
 			end, {})
+		end,
+	},
+	{
+		"mfussenegger/nvim-lint",
+		config = function()
+			require("lint").linters_by_ft = {
+				javascript = { "oxlint" },
+				typescript = { "oxlint" },
+				javascriptreact = { "oxlint" },
+				typescriptreact = { "oxlint" },
+			}
+			vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "BufEnter" }, {
+				callback = function()
+					local oxlint = vim.fs.find({ "oxlint.json", ".oxlintrc.json" }, { upward = true })[1]
+					if oxlint then
+						require("lint").try_lint("oxlint")
+					end
+				end,
+			})
 		end,
 	},
 	{
