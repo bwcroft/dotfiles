@@ -80,11 +80,14 @@ return {
 						".eslintrc.js",
 						".eslintrc.cjs",
 						".eslintrc.json",
-						"package.json",
-						".git",
+						".eslintrc.yaml",
+						".eslintrc.yml",
+						"eslint.config.js",
+						"eslint.config.mjs",
+						"eslint.config.ts",
 					})
-
-					if root then
+					local git_root = vim.fs.root(bufnr, { ".git" })
+					if root and git_root and vim.startswith(root, git_root) then
 						on_dir(root)
 					end
 				end,
