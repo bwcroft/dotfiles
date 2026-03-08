@@ -12,6 +12,18 @@ return {
 			},
 			picker = {
 				enabled = true,
+				sources = {
+					explorer = {
+						win = {
+							list = {
+								keys = {
+									["l"] = "",
+									["e"] = { "toggle_maximize", mode = { "n", "i" } },
+								},
+							},
+						},
+					},
+				},
 			},
 			image = {
 				enabled = true,
