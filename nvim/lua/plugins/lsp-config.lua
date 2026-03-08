@@ -93,10 +93,17 @@ return {
 				end,
 			})
 
+			vim.lsp.config("oxlint", {
+				flags = {
+					debounce_text_changes = 1000,
+				},
+			})
+
 			vim.lsp.enable({
 				"lua_ls",
 				"vtsls",
 				"eslint",
+				"oxlint",
 				"jsonls",
 				"html",
 				"cssls",
@@ -138,25 +145,6 @@ return {
 			vim.keymap.set("n", "<leader>gf", function()
 				require("conform").format({ lsp_fallback = true })
 			end, {})
-		end,
-	},
-	{
-		"mfussenegger/nvim-lint",
-		config = function()
-			require("lint").linters_by_ft = {
-				javascript = { "oxlint" },
-				typescript = { "oxlint" },
-				javascriptreact = { "oxlint" },
-				typescriptreact = { "oxlint" },
-			}
-			vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "BufEnter" }, {
-				callback = function()
-					local oxlint = vim.fs.find({ "oxlint.json", ".oxlintrc.json" }, { upward = true })[1]
-					if oxlint then
-						require("lint").try_lint("oxlint")
-					end
-				end,
-			})
 		end,
 	},
 	{
