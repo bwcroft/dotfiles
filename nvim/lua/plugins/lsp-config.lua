@@ -73,6 +73,20 @@ return {
 				},
 			})
 
+			vim.lsp.config("vtsls", {
+				settings = {
+					typescript = {
+						tsserver = {
+							-- Set the memory limit to 8192 MB (8GB)
+							maxTsServerMemory = 8192,
+							-- You can add other tsserver settings here
+						},
+						-- Other typescript settings
+					},
+					-- Other vtsls root settings
+				},
+			})
+
 			vim.lsp.config("eslint", {
 				root_dir = function(bufnr, on_dir)
 					local root = vim.fs.root(bufnr, {
@@ -103,7 +117,7 @@ return {
 				"lua_ls",
 				"vtsls",
 				"eslint",
-				"oxlint",
+				-- "oxlint",
 				"jsonls",
 				"html",
 				"cssls",
