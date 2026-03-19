@@ -6,7 +6,7 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"eslint",
-				"vtsls",
+        "tsgo",
 				"jsonls",
 				"html",
 				"cssls",
@@ -35,7 +35,6 @@ return {
 					ensure_installed = {
 						"prettier",
 						"stylua",
-						"oxlint",
 					},
 				},
 			},
@@ -74,16 +73,36 @@ return {
 			})
 
 			vim.lsp.config("vtsls", {
+				-- This is the "Magic Sauce":
+				-- It tells vtsls to look for the .git folder first.
+				-- This forces all sub-projects in one repo into a single LSP instance.
+				root_patterns = {
+					".git", -- 1. The Repo Root (Most stable)
+					"pnpm-workspace.yaml", -- 2. Monorepo Root (Specific to pnpm)
+					"nx.json", -- 3. Monorepo Root (Specific to Nx)
+					"package.json", -- 4. Fallback (The individual project root)
+				},
 				settings = {
 					typescript = {
 						tsserver = {
-							-- Set the memory limit to 8192 MB (8GB)
+							-- Keep your 8GB limit for large monorepos
 							maxTsServerMemory = 8192,
-							-- You can add other tsserver settings here
+							-- Performance: Disable the extra 'syntax-only' node process
+							useSeparateSyntaxServer = false,
 						},
-						-- Other typescript settings
+						preferences = {
+							-- Prevents those annoying "../../.." imports in monorepos
+							importModuleSpecifierPreference = "non-relative",
+						},
 					},
-					-- Other vtsls root settings
+					vtsls = {
+						-- Ensures it uses the version of TS in your node_modules
+						autoUseWorkspaceTsdk = true,
+						-- Performance: Only index files that are actually in the project
+						externalLibraryFiles = {
+							exclude = { "**/node_modules/**", "**/dist/**" },
+						},
+					},
 				},
 			})
 
@@ -115,9 +134,8 @@ return {
 
 			vim.lsp.enable({
 				"lua_ls",
-				"vtsls",
+        "tsgo",
 				"eslint",
-				-- "oxlint",
 				"jsonls",
 				"html",
 				"cssls",
