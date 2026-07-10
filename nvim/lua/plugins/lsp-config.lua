@@ -133,6 +133,7 @@ return {
 			})
 
 			vim.lsp.enable({
+        -- "oxlint",
 				"lua_ls",
         "tsgo",
 				"eslint",

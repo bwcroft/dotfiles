@@ -1,6 +1,6 @@
 # Theme
 theme = Catppuccin Mocha
-background = #000000
+background = #181825
 
 # Font
 font-size = 12
